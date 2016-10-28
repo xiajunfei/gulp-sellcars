@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>跳板网</title>
+		<meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+        <script src="js/js.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/index.css"  />
+	</head>
+	<body>
+		<ul class="filter">
+		    <li id="filter">筛选</li>
+		    <li id="brand">品牌</li>
+		    <li id="sort">类型</li>
+		</ul>
+		<ul class="manage_list list">
+		    <li>
+		        <a class="mg_list" href="sell_detail.html">
+		            <span class="mg_img"><img src="img/01.jpg" /></span>
+		            <dl class="mg_ifo">
+		                <dt>15款奔驰ML350中东四驱3.0T</dt>
+		                <dd>
+		                    <span class="fl">75.5<i>万元</i></span>
+		                    <span class="fr">浏览 134</span>
+		                </dd>
+		            </dl>
+		        </a>
+		    </li>
+		    <li>
+		        <a class="mg_list" href="sell_detail.html">
+		            <span class="mg_img"><img src="img/02.jpg" /></span>
+		            <dl class="mg_ifo">
+		                <dt>15款奔驰ML350中东四驱3.0T</dt>
+		                <dd>
+		                    <span class="fl">75.5<i>万元</i></span>
+		                    <span class="fr">浏览 134</span>
+		                </dd>
+		            </dl>
+		        </a>
+		    </li>
+		</ul>
+		
+		<div class="fix">
+		    <!---筛选--->
+		    <ul id="filterUl">
+		        <li>品牌</li>
+		        <li>外色</li>
+		        <li>内色</li>
+		        <li>车型</li>
+		    </ul>
+		
+		
+		    <!---品牌 车系 车型--->
+		    <ul id="brandUl">
+		        <li>
+		            <a href="javascript:void(0)">奔驰</a>
+		            <ul style="display: none;">
+		                <li>
+		                    <a href="javascript:void(0)">C系</a>
+		                    <ul style="display: none;">
+		                        <li><a href="javascript:void(0)">c63</a></li>
+		                        <li><a href="javascript:void(0)">c180</a></li>
+		                        <li><a href="javascript:void(0)">c200</a></li>
+		                    </ul>
+		                </li>
+		                <li>
+		                    <a href="javascript:void(0)">E系</a>
+		                    <ul style="display: none;">
+		                        <li><a href="javascript:void(0)">E63</a></li>
+		                        <li><a href="javascript:void(0)">E180</a></li>
+		                        <li><a href="javascript:void(0)">E200</a></li>
+		                    </ul>
+		                </li>
+		            </ul>
+		        </li>
+		        <li>
+		            <a href="javascript:void(0)">宝马</a>
+		            <ul style="display: none;">
+		                <li>
+		                    <a href="javascript:void(0)">C系</a>
+		                    <ul style="display: none;">
+		                        <li><a href="javascript:void(0)">c63</a></li>
+		                        <li><a href="javascript:void(0)">c180</a></li>
+		                        <li><a href="javascript:void(0)">c200</a></li>
+		                    </ul>
+		                </li>
+		                <li>
+		                    <a href="javascript:void(0)">E系</a>
+		                    <ul style="display: none;">
+		                        <li><a href="javascript:void(0)">E63</a></li>
+		                        <li><a href="javascript:void(0)">E180</a></li>
+		                        <li><a href="javascript:void(0)">E200</a></li>
+		                    </ul>
+		                </li>
+		            </ul>
+		        </li>
+		    </ul>
+		    <!---类型--->
+		    <ul id="sortUl">
+		        <li><a href="javascript:void(0)">欧版现货</a></li>
+		        <li><a href="javascript:void(0)">港版现货</a></li>
+		    </ul>
+		    <!--确认筛选等--->
+		    <form class="fix_btn">
+		        <div class="fix_content">
+		            <strong>筛选条件：</strong>
+		        </div>
+		        <div class="fix_button">
+		            <input class="fix_submit" type="submit" value="确认" />
+		            <input class="fix_cancel" type="button" value="取消" />
+		        </div>
+		    </form>
+		</div>
+		
+		<div id="footer">
+			<ul class="footerNav clearfix">
+				<li><a href="index.html">首页</a></li>
+				<li><a href="##">通知</a></li>
+			</ul>
+		</div>
+		<script>
+			var filterNode=document.querySelector('.filter');
+			var lis=filterNode.getElementsByTagName('li');
+			var fixNode=document.querySelector('.fix');
+			var fix_btnNode=document.querySelector('.fix_btn');
+			for(var i=0;i<lis.length;i++)
+			{
+				lis[i].onclick=function(){
+					var fixNodeUl=fixNode.getElementsByTagName('ul');
+					for(var k=0;k<fixNodeUl.length;k++)
+					{
+						fixNodeUl[k].style.display='none';
+					}
+					var thisID=this.id;
+					fixNode.className="fix fixIn";
+					document.querySelector("#"+thisID+"Ul").style.display="";
+					fix_btnNode.className='fix_btn fixIn';
+				}
+			}
+			
+			fixNode.onclick=function(e){
+				var event=e || window.event;
+				var target=event.target || event.srcElement;
+				if(target.nodeName.toLocaleLowerCase()=='div')
+				{
+					fixNode.className="fix fixOut";
+					fix_btnNode.className='fix_btn fixOut';
+				}
+				else if(target.nodeName.toLowerCase()=='a')
+				{
+					var oSibingsUl=target.parentNode.getElementsByTagName('ul')[0];
+					if(oSibingsUl)
+					{
+						if(oSibingsUl.style.display.indexOf('none')!=-1)//判断存在display：none
+						{
+							oSibingsUl.style.display='';
+						}
+						else{
+							oSibingsUl.style.display='none';
+						}
+					}
+				}
+			}
+			/*类型*/
+			var sortUlaAll=document.querySelectorAll('#sortUl a');
+			var fix_contentNode=document.querySelector('.fix_content');
+			for(var i=0;i<sortUlaAll.length;i++)
+			{
+				sortUlaAll[i].onclick=function(){
+					var val=this.innerHTML;
+					var oldSpan=document.querySelectorAll('.fix_content span')[0];//得到节点span
+					var ulIdObj=parentObj(this);//得到父节点ul
+					var ulId=ulIdObj.id;
+					var span=document.createElement('span');//创造节点span
+					span.innerHTML=val;
+					if(oldSpan)
+						fix_contentNode.replaceChild(span,oldSpan);
+					else
+						fix_contentNode.appendChild(span);
+				}
+			}
+			/*品牌*/
+			var brandUlaAll=document.querySelectorAll('#brandUl a');
+			for(var i=0;i<brandUlaAll.length;i++)
+			{
+				if(brandUlaAll[i].parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.id)
+				{
+					brandUlaAll[i].onclick=function(){
+						var as=this.parentNode.parentNode.parentNode.parentNode.parentNode.getElementsByTagName('a');
+						var asA=as[0].innerHTML;
+						var asB=this.parentNode.parentNode.parentNode.getElementsByTagName('a')[0].innerHTML;
+						var val=this.innerHTML;
+						val=asA+" "+asB+" "+val;
+						var spanNode=document.querySelector('.fix_content span');
+						var span=document.createElement('span');
+						span.innerHTML=val;
+						if(spanNode){
+							fix_contentNode.replaceChild(span,spanNode);
+						}
+						else
+							fix_contentNode.appendChild(span);
+					}
+				}
+			}
+			/*取消*/
+			var fix_cancelNode=document.querySelector('.fix_cancel');
+			fix_cancelNode.onclick=function(){
+				fix_contentNode.innerHTML="<strong>筛选条件：</strong>";
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "sellcars",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cars"
+  ],
+  "author": "xjf",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.14.0",
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.1.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.0"
+  }
+}

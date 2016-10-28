@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>跳板网</title>
+		<meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+        <script src="js/js.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/index.css"  />
+	</head>
+	<body>
+		<form>
+		    <a id="publish" href="sell-publish.html">发布一条</a>
+		    <ul class="manage_list">
+		        <li>
+		            <span class="mg_check"><input type="checkbox" /></span>
+		            <div class="mg_list">
+		                <span class="mg_img"><img src="img/01.jpg" /></span>
+		                <dl class="mg_ifo">
+		                    <dt>15款奔驰ML350中东四驱3.0T</dt>
+		                    <dd>
+		                        <span class="fl">75.5<i>万元</i></span>
+		                        <span class="fr">浏览 134</span>
+		                    </dd>
+		                </dl>
+		            </div>
+		        </li>
+		        <li>
+		            <span class="mg_check"><input type="checkbox" /></span>
+		            <div class="mg_list">
+		                <span class="mg_img"><img src="img/02.jpg" /></span>
+		                <dl class="mg_ifo">
+		                    <dt>15款奔驰ML350中东四驱3.0T</dt>
+		                    <dd>
+		                        <span class="fl">75.5<i>万元</i></span>
+		                        <span class="fr">浏览 134</span>
+		                    </dd>
+		                </dl>
+		            </div>
+		        </li>
+		    </ul>
+		
+		    <div id="footer">
+		        <button class="mg_btn" type="submit">删除（<span>0</span>）</button>
+		    </div>
+		</form>
+		<script>
+			var lis=document.querySelectorAll('.manage_list li');
+			for(var i=0;i<lis.length;i++)
+			{
+				lis[i].onclick=function(){
+					var inputNode=this.getElementsByTagName('input')[0];
+					if(inputNode.checked)
+					{
+						inputNode.checked=false;
+						inputNode.parentNode.className+='mg_check';
+					}
+					else{
+						inputNode.checked=true;
+						inputNode.parentNode.className+=' mg_checkCur';
+					}
+					
+					var inputs=document.querySelectorAll('input');
+					//console.log(inputs);
+					var n=0;
+					for(var j=0;j<inputs.length;j++)
+					{
+						if(inputs[j].checked)
+							n++;
+					}
+					document.querySelector('.mg_btn span').innerHTML=n;
+				}
+			}
+			document.querySelector('form').onsubmit=function(){
+				if(window.confirm("确定要删除吗？"))
+				{
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			}
+		</script>
+	</body>
+</html>

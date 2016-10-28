@@ -1,0 +1,642 @@
+body,h1,h2,h3,h4,div,ul,li,dl,dt,dd,form,input,select,option,textarea,a,img,em,i,strong,b{ margin: @zero; padding: @zero;}
+@fontfamily:"微软雅黑";
+@background:#f7f7f7;
+@none:none;
+@fontcolor:#000;
+@fontsize:625%;
+@verticalalign:top;
+@zero:0;
+@auto:auto;
+@block:block;
+@left:left;
+@right:right;
+@img:"../img";
+@norepeat:no-repeat;
+@allwidth:100%;
+@center:center;
+@absolute:absolute;
+@soild:solid;
+@borderheight:1px;
+@top:top;
+@bottom:bottom;
+@size:size;
+@position:position;
+@fff:#fff;
+input{
+    font-family:@fontfamily;
+    outline:@none;
+    resize: @none;
+}
+select{
+    &:extend(input);
+}
+option{
+    &:extend(input);
+}
+textarea{
+    &:extend(input);
+}
+li{
+    list-style: @none;
+}
+img{
+    vertical-align:@verticalalign;
+    border: 0 @none;
+}
+a{
+    text-decoration: @none;
+    color: @fontcolor;
+    &:hover{
+        color: @fontcolor;
+    }
+    &:visited{
+        color: @fontcolor;
+    }
+}
+html{
+    font-size: @fontsize;
+}
+body{
+    max-width: 750px;
+    min-width: 320px;
+    font-family:@fontfamily;
+    background: @background;
+    margin:@zero @auto;
+}
+.clearfix {
+  display: @block;
+  zoom: 1;
+
+  &:after {
+    content: " ";
+    display: @block;
+    font-size: @zero;
+    height: @zero;
+    clear: both;
+    visibility: hidden;
+  }
+}
+.wh(@w,@h){
+    width: @w;
+    height: @h;
+}
+.backgroundSize(@x:0,@y:0){
+    background-size: @arguments;
+}
+.font(@s,@h){
+    font-size: @s;
+    line-height: @h;
+}
+.ot(){
+    overflow: hidden; 
+}
+#header{ 
+    @fontfamily:"宋体";
+    .wh(@allwidth,.78rem);
+    .font(.26rem,.78rem);
+    font-family: @fontfamily;
+    span{
+        &:nth-child(2){
+             color: #666; 
+            padding-right: .25rem;
+             }
+        &:nth-child(1){
+            padding-@{left}: .35rem;
+             }
+        }
+}
+#ad{
+    .wh(@allwidth,3.2rem);
+    img{
+        .wh(@allwidth,@allwidth);
+    }
+}
+#nav{
+    background: url("@{img}/index_nav.png") @norepeat .16rem .15rem;//编译图片格式
+    width:@allwidth; 
+    .backgroundSize(7.19rem,4.81rem);
+    margin-@{top}:0.1rem;
+    li{
+        float: @left;
+        .wh(3.5rem,1.5rem);
+        .font(.34rem,1.5rem);
+        text-align: @center;
+        margin: .15rem .03rem 0 .16rem;
+    }
+    a{
+        .wh(@allwidth,@allwidth);
+         display: @block;
+    }
+}
+#tel{
+    text-align: @center;
+    .font(.26rem,.35rem);
+    margin-@{top}: .78rem;
+    @fontcolor:#666;
+    a{
+        color: @fontcolor;
+        &:hover{
+            color: @fontcolor;
+        }
+        &:active{
+            color: @fontcolor;
+        }
+    }
+}
+/*sell*/
+.filter{
+    @fontcolor:#666;
+    .wh(@allwidth,.82rem); background: @fff;
+    li{
+        float: @left;
+        text-align: @center; width: 33.33%;
+        .font(.26rem,.82rem); color: @fontcolor;
+    }
+}
+.mg_check{ 
+    float: @left; 
+    .wh(.48rem,.48rem);
+    margin: .43rem .08rem @zero .23rem; 
+    background: url("@{img}/icon_bg.png") @norepeat -1.85rem -1.51rem; 
+    background-@{size}: 2.43rem 2.1rem; 
+    overflow:hidden;
+    input{
+        opacity: @zero;
+        margin-@{left}: -100px;
+    }
+}
+.mg_btn{ 
+    display: @block; 
+    .wh(@allwidth,.99rem);
+    border: @zero @none; 
+    border-top: #c7c7cd @borderheight @soild;
+    .font(.34rem,.99rem);
+    text-align: @center; 
+    background: #d31131; 
+    color: @fff; 
+    font-weight: bold; 
+}
+.mg_checkCur{ background-@{position}:-1.85rem -.89rem;}
+.manage_list{
+    margin-@{top}: .55rem; width:@allwidth; .ot; background: @fff;
+    li{
+        .ot;
+        width: @allwidth * 1.1;
+        margin-@{top}: .24rem;
+    }
+}
+.list{ 
+    margin-@{top}: @zero;
+    .mg_list{
+        width: @allwidth;
+    }
+    .mg_ifo{
+        width: 4.6rem;
+    }
+}
+.mg_list{
+    float: @left; width: 6.75rem; border-@{bottom}: #e5e5e5 @borderheight @soild;
+    padding-@{bottom}:.21rem;
+}
+.mg_img{
+    float: @left; .wh(1.98rem,1.48rem); margin-@{left}: .16rem; border:#e5e5e5 @borderheight @soild;
+    img{
+        .wh(@allwidth,@allwidth);
+    }
+}
+.mg_ifo{
+    float: @left; width: 3.9rem; margin-@{left}: .27rem;
+    dt{
+        .font(.32rem,.4rem);
+        height: .8rem;
+        .ot;
+         font-weight: bold;
+    }
+    dd{
+        .wh(@allwidth,.62rem);
+        margin-@{top}: .11rem;
+        .fl{
+            .font(.32rem,.62rem); color: #d5d713;
+            i{
+                font-style: normal;font-size: .2rem;
+            }
+        }
+        .fr{
+            .font(.2rem,.4rem); margin-@{top}: .22rem;color: #c1c1c1;
+        }
+    }
+}
+.fix{
+    @absolute:fixed;
+    @{position}:@absolute;
+    @{left}: -@allwidth;
+    @{top}: @zero;
+    .wh(@allwidth,@allwidth); overflow-y: @auto; z-index: 9999;
+    background: rgba(@zero,@zero,@zero,.6);
+    ul{
+        .wh(75%,@allwidth);
+        background: @fff;
+        li{
+            box-sizing: border-box;
+            padding-@{left}: .5rem; border-@{bottom}:#999 @soild @borderheight; background:@fff;
+            .font(.32rem,.8rem);
+        }
+        a{
+            display: @block; .wh(@allwidth,@allwidth); outline: @none;
+        }
+        ul{
+            .wh(@allwidth,@auto); padding-@{bottom}: .2rem;
+            li{
+                @soild:dashed;
+                border-@{bottom}: #999 @borderheight @soild;
+            }
+        }
+    }
+    .fix_btn{
+        position: @absolute; left: -@allwidth; bottom: @zero; z-index: 9;
+        background: @fff; width: 75%;
+    }
+    .fix_cancel{ 
+        color: @fff; 
+        .wh(1.1rem,.6rem);
+        .font(.3rem,.6rem);
+        float: @right; text-align: @center;
+        margin-@{right}: .15rem; border:@zero @none;
+    }
+    .fix_submit{
+        &:extend(.fix .fix_cancel);
+        background: #d31131;
+    }
+}
+.fix_cancel{
+    background: #999;
+}
+.fix_button{ 
+    .wh(@allwidth,.8rem);
+    padding-@{top}: .2rem;
+}
+.fix_content{ 
+    .font(.3rem,.5rem);
+    overflow: hidden;
+    padding: .3rem;
+}
+.fix_content strong{ 
+    margin-@{left}: .15rem;
+}
+.fix_content span{
+    &:extend(.fix_content strong);
+    border: #000 @borderheight @soild; 
+    padding: @zero .05rem;
+}
+.fix_pp{ padding-@{bottom}: 8rem; box-sizing: border-box;}
+
+.keyframes(@name,@x,@y){
+    @keyframes @name
+    {
+        0%{ left: @x;}
+        @{allwidth}{ left: @y;}
+    }
+    @-moz-keyframes @name{
+        0%{ left: @x;}
+        @{allwidth}{ left: @y;}
+    }
+    @-webkit-keyframes @name /* Safari 和 Chrome */
+    {
+        0%{ left: @x;}
+        @{allwidth}{ left: @y;}
+    }
+    @-o-keyframes @name /* Opera */
+    {
+        0%{ left: @x;}
+        @{allwidth}{ left: @y;}
+    }
+}
+
+.keyframes(fixIn,-@allwidth,@zero);
+.keyframes(fixOut,@zero,-@allwidth);
+.animation(@x:fixIn,@y:.5s,@z:forwards)
+{
+    animation: @arguments;
+    -o-animation: @arguments;
+    -ms-animation: @arguments;
+    -webkit-animation: @arguments;
+    -moz-animation: @arguments;
+}
+.fixIn{
+    .animation;
+}
+.fixOut{
+    .animation(fixOut,.5s,forwards);
+}
+#footer{
+    @absolute:fixed;
+    @background:#fff;
+    z-index: 99;
+    position: @absolute; left: @zero; bottom: @zero; .wh(@allwidth,1rem);
+    background: @background;
+    .footerNav{
+        border-top:#c7c7cd @borderheight @soild; width: @allwidth;
+        li{
+             float: @left; .wh(.55rem,.8rem); margin-top: .16rem;
+             &:nth-child(1){
+                 margin-@{left}: 1.24rem;
+                 a{
+                     background-@{position}: -.03rem -.06rem;
+                 }
+             }
+             &:nth-child(2){
+                 margin-@{right}: 1.24rem;
+                 float: @right;
+                 a{
+                     background-@{position}: -.96rem -.10rem;
+                 }
+             }
+        }
+        a{
+            display: @block; .wh(@allwidth,@allwidth); background: url("@{img}/icon_bg.png") @norepeat;
+            background-@{size}:2.43rem 2.1rem;
+            .ot; opacity: .6;;
+            &:hover{
+                opacity: 1;
+            }
+            text-indent:99em;
+        }
+    }
+}
+/*卖车*/
+#carImg{
+    .wh(@allwidth,3rem);
+    img{
+        .wh(@allwidth,@allwidth);
+    }
+}
+.car_info{
+    width: @allwidth; margin-@{top}: .15rem; box-sizing: border-box; border-@{bottom}: #c8c7cc @borderheight @soild; padding: .19rem @zero @zero .45rem; background: @fff;
+    dl{
+        width: @allwidth;
+        overflow: hidden;
+    }
+    dt{
+        float: @left;
+        font-weight: bold;
+        width: @allwidth;
+        .font(.32rem,.68rem);
+    }
+    dd{
+        float: @left;
+        color: #999;
+        width:2.25rem;
+        .font(.26rem,.5rem);
+    }
+    strong{
+        display: @block;
+        .font(.34rem,1.12rem);
+        color: #d5d713;
+    }
+    .car_info_dd{
+        width: 4.5rem;
+    }
+}
+.car_config{ 
+    width: @allwidth; padding: .32rem 0 .27rem .3rem; 
+    box-sizing: border-box; margin-@{top}: .15rem; background: @fff;
+    border-bottom: #c8c7cc @borderheight @soild; color: #c7c7cd;
+     font-size: .26rem; overflow: hidden;
+     dt{
+         float: @left;
+         width: .7rem;
+     }
+     dd{
+         float: @left;
+         width:6.1rem;
+     }
+}
+.car_name{
+    width: @allwidth; padding: .12rem 0 .25rem .3rem; 
+    box-sizing: border-box; 
+    margin-@{top}: .15rem; 
+    background: @fff;
+    border-@{bottom}: #c8c7cc @borderheight @soild;
+    dt{
+        .font(.32rem,.6rem);
+    }
+    dd{
+        font-size: .26rem;
+        color: #c1c1c1;
+    }
+}
+.footTel{
+     border-top: #c8c7cc @borderheight @soild; 
+     width: @allwidth;
+     a{
+         display: @block;
+         .wh(2rem,.5rem);
+         .font(.34rem,.46rem);
+          margin: .3rem @auto @zero;
+          color: #999;
+          padding-@{left}: .56rem;
+          white-space: nowrap;
+          background: url("@{img}/icon_bg.png") @norepeat -1.85rem -.1rem;
+          background-@{size}: 2.43rem 2.1rem;
+      /*background-size必须放在background后面才有用*/
+          box-sizing: border-box;
+     }
+}
+/*发布*/
+.publish_box{
+    padding-@{left}: .3rem;
+    margin-@{top}:.42rem; 
+    border-@{top}:#c8c7cc @borderheight @soild;
+    border-@{bottom}:#c8c7cc @borderheight @soild;
+    background:@fff;
+}
+.publish_ul{
+    li{
+        border-@{bottom}:#c8c7cc @borderheight @soild;
+        .font(.26rem,.86rem);
+        height:.86rem;
+        &:last-child{
+            border-@{bottom}: @zero @none;
+        }
+    }
+    label{
+        float: @left;
+    }
+    input{
+        float: @right;
+        .wh(5.2rem,.86rem);
+        line-height: .86rem;
+        border: @zero @none;
+        background: @none;
+    }
+    .arrow{
+        box-sizing: border-box;
+        background: url("@{img}/arrow.png") @norepeat @right @top;
+        padding-@{right}:.72rem;
+        text-align:@right;
+        background-@{size}: @auto @allwidth;
+    }
+    .arrow_w{
+        background-image: url("@{img}/wan.png");
+    }
+}
+.buySell_text{ 
+    display: @block;
+    box-sizing: border-box; 
+    .wh(@allwidth,3.67rem);
+    .font(.26rem,.26rem);
+    padding: .35rem .2rem .2rem; 
+    border: @zero @none;
+    border-@{bottom}: #c8c7cc @borderheight @soild; 
+    overflow-y: @auto;
+}
+/*publish_text写在buySell_text下面，则publish_text的height值得级别大于buySell_text*/
+.publish_text{  height: 1.7rem;}
+.publish_file{ 
+    @{position}:relative;
+    input{
+        @{position}:@absolute;
+        .wh(@allwidth,@allwidth);
+        opacity: @zero;
+        z-index: 999;
+    }
+}
+.publish_img{
+    @{position}:@absolute;
+    z-index: 1;
+    .wh(.58rem,.58rem);
+    background: #373737;
+    border-radius:.12rem;
+    @{top}:.13rem;
+    @{left}:.3rem;
+    i{
+         @{position}:@absolute;
+         @{right}:.12rem;
+         @{top}:.14rem;
+         background: #f1f330;
+         border-radius: 50%;
+         .wh(.15rem,.15rem);
+    }
+    em{
+        font-style: normal;
+        .font(.26rem,.58rem);
+        @{position}:@absolute;
+        @{top}:.0rem;
+        @{left}:.9rem;
+        white-space: nowrap;
+    }
+}
+.publish_arrow{ float: @right; height: @allwidth;}
+.buySell_btn{ 
+    display: @block; 
+    margin: 2rem @auto @zero; 
+    border: @zero @none; 
+    .wh(6.78rem,1rem);
+    text-align: @center; 
+    color: #333; 
+    .font(.34rem,1rem);
+    background: #f1f330; 
+    border-radius: .08rem;
+}
+/*委托*/
+#publish{
+    display: @block;
+    .font(.26rem,.65rem);
+    .wh(3.8rem,.65rem);
+    margin: .24rem @auto @zero;
+    text-align: @center;
+    border-radius: 2px;
+    border: @borderheight @soild #ecee11;
+    color: #dadc3c;
+    background: @fff;
+}
+
+.buySell{ 
+    margin-@{top}: .48rem;
+    li{
+        border-@{bottom}: @borderheight @soild #e5e5e5;
+        padding-@{top}:.43rem;
+        width:@allwidth;
+        overflow: hidden;
+        a{
+            display: @block;
+            .wh(@allwidth,@allwidth);
+        }
+    }
+}
+.buySell_num{
+     float: @left; 
+     .wh(1.11rem,.96rem);
+     .font(.34rem,.96rem);
+     text-align: @center; 
+     border-@{right}: #c7c7cd @borderheight @soild; 
+     color: #999; 
+}
+.buySell_car{
+    float:@left;
+    width: 5.3rem;
+    margin-@{left}: .62rem; 
+    padding-@{bottom}: .2rem;
+    dt{
+        line-height: .44rem;
+        height: .44rem;
+        overflow: hidden;
+        font-weight: bold;
+        font-size: .32rem;
+    }
+    dd{
+        .font(.2rem,.46rem);
+        height: .46rem; overflow: hidden;color: #b8b8b8;
+        &:last-child{
+            text-align: @right;
+        }
+    }
+}
+.buySell_btn{ 
+    display: block;
+    margin: 2rem @auto @zero; 
+    border: @zero @none; 
+    .wh(6.78rem,1rem);
+    text-align: @center;
+    line-height: 1rem; 
+    color: #333; 
+    font-size: .34rem; 
+    background: #f1f330; 
+    border-radius: .08rem;
+}
+
+/*买车细节*/
+.body_bg1{ 
+    background: #f1f1f1;
+}
+.buy_person{ 
+    width: @allwidth;
+    overflow: hidden; 
+    background: @fff; 
+    box-sizing: border-box; 
+    padding: .32rem @zero .22rem .46rem;
+    dt{
+        float: @left;
+        .wh(.84rem,.84rem);
+        margin-@{right}: .18rem;
+        img{
+            .wh(@allwidth,@allwidth);
+            border-radius: @allwidth/2;
+        }
+    }
+    dd{
+        float: @left;
+        .font(.34rem,.48rem);
+        width: 5.5rem;
+        &:last-child{
+            font-size: .26rem;
+            color: #e5e5e5;
+        }
+    }
+}
+.fl{
+     float: @left; 
+}
+.fr{ 
+    float: @right;
+}
